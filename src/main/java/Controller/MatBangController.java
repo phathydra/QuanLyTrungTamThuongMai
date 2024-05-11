@@ -51,8 +51,16 @@ public class MatBangController {
         String dienTich = sc.nextLine();
         System.out.print("Nhập loại hình kinh doanh: ");
         String loaiHinhKinhDoanh = sc.nextLine();
-        System.out.print("Nhập giá thuê: ");
-        double giaThue = sc.nextDouble();
+        
+        double giaThue;
+        do {
+            System.out.print("Nhập giá thuê: ");
+            giaThue = sc.nextDouble();
+            if (giaThue < 0) {
+                System.out.println("Giá thuê không được là số âm. Hãy nhập lại.");
+            }
+        } while (giaThue < 0);
+
         MatBang matBang = new MatBang(0, diaChi, dienTich, loaiHinhKinhDoanh, giaThue);
         matBangDao.themMatBang(matBang);
         System.out.println("Đã thêm mặt bằng '" + diaChi + "' diện tích '" + dienTich + "', loại hình '" + loaiHinhKinhDoanh + "', giá thuê '" + giaThue + "' thành công!");
@@ -125,8 +133,16 @@ public class MatBangController {
         String dienTich = sc.nextLine();
         System.out.print("Nhập loại hình kinh doanh mới: ");
         String loaiHinhKinhDoanh = sc.nextLine();
-        System.out.print("Nhập giá thuê mới: ");
-        double giaThue = sc.nextDouble();
+
+        double giaThue;
+        do {
+            System.out.print("Nhập giá thuê mới: ");
+            giaThue = sc.nextDouble();
+            if (giaThue < 0) {
+                System.out.println("Giá thuê không được là số âm. Hãy nhập lại.");
+            }
+        } while (giaThue < 0);
+
         MatBang matBang = new MatBang(id, diaChiMoi, dienTich, loaiHinhKinhDoanh, giaThue);
         matBangDao.capNhatMatBang(matBang);
         System.out.println("Đã sửa thông tin mặt bằng có ID " + id + " thành: Địa chỉ: " + diaChiMoi + ", Diện tích: " + dienTich + ", Loại hình kinh doanh: " + loaiHinhKinhDoanh + ", Giá thuê: " + giaThue);
