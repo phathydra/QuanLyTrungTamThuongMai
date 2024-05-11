@@ -4,10 +4,11 @@
  */
 package DAO;
 
-import JDBC.JDBCUtil;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+
+import JDBCUtil.JDBCUtil;
 
 
 public class TestConnection {
