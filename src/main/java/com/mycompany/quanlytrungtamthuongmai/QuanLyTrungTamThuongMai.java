@@ -4,6 +4,8 @@
 
 package com.mycompany.quanlytrungtamthuongmai;
 
+import MenuControl.MenuStorage;
+
 import DAO.TestConnection;
 
 /**
@@ -13,12 +15,7 @@ import DAO.TestConnection;
 public class QuanLyTrungTamThuongMai {
 
     public static void main(String[] args) {
-        TestConnection tc = new TestConnection();
-        if(tc.testConnection()){
-            System.out.print("Connected!");
-        }
-        else{
-            System.out.print("Error!");
-        }
+        MenuStorage menus = new MenuStorage();
+        menus.run();
     }
 }
