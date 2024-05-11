@@ -7,7 +7,21 @@ public class NhanVien {
 	private String diaChi;
 	private String chucVu;
 	private int idPhongBan;
+	private int trangThai;
 	
+	
+
+	public NhanVien(int id, int idTaiKhoan, String hoTen, String diaChi, String chucVu, int idPhongBan, int trangThai) {
+		super();
+		this.id = id;
+		this.idTaiKhoan = idTaiKhoan;
+		this.hoTen = hoTen;
+		this.diaChi = diaChi;
+		this.chucVu = chucVu;
+		this.idPhongBan = idPhongBan;
+		this.trangThai = trangThai;
+	}
+
 	public NhanVien(int id, int idTaiKhoan, String hoTen, String diaChi, String chucVu, int idPhongBan) {
 		super();
 		this.id = id;
@@ -64,6 +78,14 @@ public class NhanVien {
 
 	public void setIdPhongBan(int idPhongBan) {
 		this.idPhongBan = idPhongBan;
+	}
+	
+	public int getTrangThai() {
+		return trangThai;
+	}
+
+	public void setTrangThai(int trangThai) {
+		this.trangThai = trangThai;
 	}
 	
 }
