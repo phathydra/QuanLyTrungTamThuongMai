@@ -2,22 +2,24 @@ package Main;
 
 import java.util.Scanner;
 
+import Controller.MatBangController;
 import Controller.NhanVienController;
 
 public class Main {
 	public static void main(String[] args) {
 		NhanVienController nv = new NhanVienController();
+		MatBangController mb = new MatBangController();
 		Scanner sc = new Scanner(System.in);
         boolean tiepTuc = true;
         
         do {
         	System.out.println("Lựa chọn:");
-        	System.out.println("1. Thêm giao dịch đất.");
-        	System.out.println("2. Thêm giao dịch nhà.");
+        	System.out.println("1. Thêm thông tin mặt bằng.");
+        	System.out.println("2. Sửa thông tin mặt bằng.");
         	System.out.println("3. In tất cả các giao dịch.");
         	System.out.println("4. Xoá giao dịch.");
         	System.out.println("5. Xoá thông tin nhân viên.");
-        	System.out.println("6. Trung bình thành tiền của giao dịch đất.");
+        	System.out.println("6. Thuê mặt bằng.");
         	System.out.println("7. Tìm kiếm giao dịch bằng năm giao dịch.");
         	System.out.println("0. Thoát chương trình.");
         	System.out.print("\nHãy nhập lựa chọn của bạn:");
@@ -27,19 +29,16 @@ public class Main {
         	{
         	case 1:
         	{
-        		System.out.println("\n---------- Thêm giao dịch đất ----------");
-        		
+        		mb.themThongTinMatBang();        		
         		break;
         	}
         	case 2:
         	{
-        		System.out.println("\n---------- Thêm giao dịch nhà ----------");
-        		
+        		mb.suaThongTinMatBang();
         		break;
         	}
         	case 3:
         	{
-        		System.out.println("\n---------- Tất cả các giao dịch ----------");
         		
         		break;
         	}
@@ -57,8 +56,8 @@ public class Main {
         	}
         	case 6:
         	{
-        		System.out.println("\n---------- Trung bình thành tiền của giao dịch đất ----------");
-        		
+        		System.out.println("\n---------- Thuê mặt bằng ----------");
+        		mb.thueMatBang(3);
         		break;
         	}
         	case 7:

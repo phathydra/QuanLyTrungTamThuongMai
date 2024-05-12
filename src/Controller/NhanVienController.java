@@ -18,27 +18,40 @@ public class NhanVienController {
 		    		nhanvien.getChucVu() + " ID Phòng ban: " + nhanvien.getIdPhongBan());
 		}
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Lựa chọn:");
-    	System.out.println("1. Nhập mã nhân viên để xoá.");
-    	System.out.println("2. Tìm kiếm nhân viên.");
+		System.out.println("1. Xoá nhân viên.");
+    	System.out.println("0. Thoát.");
     	System.out.print("\nHãy nhập lựa chọn của bạn:");
-    	int luaChon = sc.nextInt(); sc.nextLine();
-    	if (luaChon == 1) {
-    		System.out.print("\nHãy nhập mã nhân viên cần xoá:");
-    		int maNhanVien = sc.nextInt();
-    		xoaNhanVien(maNhanVien);
-    	}else if(luaChon == 2) {
-    		System.out.print("\nHãy nhập thông tin nhân viên cần tìm:");
-    		String thongTin = sc.nextLine();
-    		List<NhanVien> nhanVien = nhanVienDao.timKiemNhanVien(thongTin);
-    		for (NhanVien nhanvien : nhanVien) {
-    		    System.out.println("ID: " + nhanvien.getId() + " ID Tài khoản: " + nhanvien.getIdTaiKhoan() +
-    		    		" Họ tên: " + nhanvien.getHoTen() + " Địa chỉ: " + nhanvien.getDiaChi() + " Chức vụ: " + 
-    		    		nhanvien.getChucVu() + " ID Phòng ban: " + nhanvien.getIdPhongBan());
-    		}
-    		System.out.print("\nHãy nhập mã nhân viên cần xoá:");
-    		int maNhanVien = sc.nextInt();
-    		xoaNhanVien(maNhanVien);
+    	int xacNhan = sc.nextInt(); sc.nextLine();
+    	switch(xacNhan) {
+    	case(1):{
+    		System.out.println("Lựa chọn:");
+        	System.out.println("1. Nhập mã nhân viên để xoá.");
+        	System.out.println("2. Tìm kiếm nhân viên.");
+        	System.out.print("\nHãy nhập lựa chọn của bạn:");
+        	int luaChon = sc.nextInt(); sc.nextLine();
+        	if (luaChon == 1) {
+        		System.out.print("\nHãy nhập mã nhân viên cần xoá:");
+        		int maNhanVien = sc.nextInt();
+        		xoaNhanVien(maNhanVien);
+        	}else if(luaChon == 2) {
+        		System.out.print("\nHãy nhập thông tin nhân viên cần tìm:");
+        		String thongTin = sc.nextLine();
+        		List<NhanVien> nhanVien = nhanVienDao.timKiemNhanVien(thongTin);
+        		for (NhanVien nhanvien : nhanVien) {
+        		    System.out.println("ID: " + nhanvien.getId() + " ID Tài khoản: " + nhanvien.getIdTaiKhoan() +
+        		    		" Họ tên: " + nhanvien.getHoTen() + " Địa chỉ: " + nhanvien.getDiaChi() + " Chức vụ: " + 
+        		    		nhanvien.getChucVu() + " ID Phòng ban: " + nhanvien.getIdPhongBan());
+        		}
+        		System.out.print("\nHãy nhập mã nhân viên cần xoá:");
+        		int maNhanVien = sc.nextInt();
+        		xoaNhanVien(maNhanVien);
+        	}
+    	}
+    	case(0):
+    		break;
+    	default:
+    		System.out.println("Lựa chọn không hợp lệ.");
+            break;
     	}
 	};
 	
